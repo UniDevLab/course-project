@@ -1,5 +1,7 @@
+import { Queue } from "../../types/external/broker/queue.broker.types";
+import { Options } from "../../types/external/broker/broker.types";
 import { StorageTool } from "./storage.tool";
-import { ConsumerCallback, Options, Queue } from "../../types/broker.types";
+import { ConsumerCallback } from "../../types/external/broker/consumer.broker.types";
 
 export class QueueTool extends StorageTool<Queue> {
   private readonly queueOptions = {
@@ -21,8 +23,8 @@ export class QueueTool extends StorageTool<Queue> {
     const queueName = this.createCollectionKey(user_id, name);
     const channel = await this.createChannel(queueName, connection, collection);
     await channel.assertQueue(queueName, this.queueOptions);
+    await channel.prefetch(1);
     collection[queueName] = { channel, consumer: null };
-    console.log("Queue Create", this.storage);
   }
 
   async get(options: Options) {

@@ -1,5 +1,5 @@
 import { Checkpoint } from "../models/checkpoint.model";
-import { CheckpointCombinedModel } from "../types/checkpoint.types";
+import { CheckpointCombinedModel } from "../types/models/checkpoint.model.types";
 
 export class CheckpointService {
   private model: CheckpointCombinedModel;

@@ -1,5 +1,5 @@
 import { Request } from "express";
-import { Identification } from "./auth.types";
+import { Identification } from "./services/user.service.types";
 
 export type AuthedRequest = Request & {
   identification: Identification;

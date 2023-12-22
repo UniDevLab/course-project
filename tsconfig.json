@@ -17,7 +17,7 @@
   },
   "include": [
     "./**/*"
-  ],
+, "models/wix.model.ts"  ],
   "exclude": [
     "node_modules",
     "tests/**/*"

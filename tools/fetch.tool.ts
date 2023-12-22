@@ -6,7 +6,10 @@ import axios, {
   RawAxiosRequestHeaders,
 } from "axios";
 import { CustomError } from "../constructors/error.constructor";
-import { ErrorCallback, ResponseCallback } from "../types/fetch.types";
+import {
+  ErrorCallback,
+  ResponseCallback,
+} from "../types/tools/fetch.tool.types";
 
 export class FetchTool {
   tool: Axios;
@@ -29,15 +32,11 @@ export class FetchTool {
   }
 
   private errorCb = (error: AxiosError) => {
+    console.log(error);
     throw new CustomError("Fetch", "Failed to fetch!", error.status || 500);
   };
 
   private responseCb = (response: AxiosResponse) => response.data;
-
-  delay(time: number = null) {
-    if (!time) time = Math.floor(Math.random() * 3000) + 1;
-    return new Promise((resolve) => setTimeout(resolve, time));
-  }
 
   formRoute(...paths: Array<string | number>) {
     const base = "/";

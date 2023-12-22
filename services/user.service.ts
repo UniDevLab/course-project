@@ -1,39 +1,36 @@
-import { PasswordTool } from "../tools/password.tool";
-import { CustomError } from "../constructors/error.constructor";
 import { User } from "../models/user.model";
+import { WixService } from "./wix.service";
+import { CustomError } from "../constructors/error.constructor";
+import { PasswordTool } from "../tools/password.tool";
+import { TokenService } from "./token.service";
+import { CenshareService } from "./censhare.service";
+import { CheckpointService } from "./checkpoint.service";
+import { UserCombinedModel } from "../types/models/user.model.types";
 import {
-  ChangePassword,
-  ResetPassword,
-  UserCombinedModel,
-} from "../types/user.types";
-import {
-  AuthRedirect,
-  AuthTokens,
-  FinalStep,
-  InitialStep,
   Login,
   Refresh,
-} from "../types/auth.types";
-import { TokenService } from "./token.service";
-import { CheckpointService } from "./checkpoint.service";
-import { EndpointsService } from "./endpoints.service";
-import { CredentialsService } from "./credentials.service";
+  FinalStep,
+  AuthTokens,
+  InitialStep,
+  AuthRedirect,
+  ChangePassword,
+} from "../types/services/user.service.types";
 
 export class UserService {
+  private wix: WixService;
   private token: TokenService;
   private password: PasswordTool;
   private model: UserCombinedModel;
-  private endpoints: EndpointsService;
+  private censhare: CenshareService;
   private checkpoint: CheckpointService;
-  private credentials: CredentialsService;
 
   constructor() {
     this.model = User;
+    this.wix = new WixService();
     this.token = new TokenService();
     this.password = new PasswordTool();
-    this.endpoints = new EndpointsService();
+    this.censhare = new CenshareService();
     this.checkpoint = new CheckpointService();
-    this.credentials = new CredentialsService();
   }
 
   async getById(id: string) {
@@ -59,10 +56,9 @@ export class UserService {
   }
 
   async fillInAccount(input: FinalStep): Promise<AuthTokens> {
-    const { _id, email, credentials, endpoints } = input;
-    console.log("credentials", credentials);
-    await this.credentials.create(_id, credentials);
-    await this.endpoints.create(_id, endpoints);
+    const { _id, email, censhare, wix } = input;
+    await this.censhare.create(_id, censhare);
+    await this.wix.create(_id, wix);
     await this.checkpoint.setState(_id);
     const tokens = await this.token.getTokens({ _id, email });
     return tokens;
@@ -106,19 +102,6 @@ export class UserService {
 
     if (!similar) {
       throw new CustomError("User Error", "Invalid old password", 401);
-    }
-
-    const password = this.password.hash(input.newPassword);
-    await this.model.changePassword(id, password);
-  }
-
-  async resetPassword(input: ResetPassword) {
-    const user = await this.model.findByEmail(input.email);
-    const id = user._id.toString();
-    const credentials = await this.credentials.getByUserId(id);
-
-    if (credentials.secret !== input.secret) {
-      throw new CustomError("User Error", "Invalid secret word", 401);
     }
 
     const password = this.password.hash(input.newPassword);

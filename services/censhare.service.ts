@@ -1,21 +1,43 @@
+import { Censhare } from "../models/censhare.model";
 import { FetchTool } from "../tools/fetch.tool";
-import { ParserTool } from "../tools/parser.tool";
-import { Asset, EntityPage } from "../types/censhare.types";
-import { CredentialsService } from "./credentials.service";
+import {
+  EntityPage,
+  UpdateCenshareData,
+} from "../types/services/censhare.service.types";
+import {
+  CenshareData,
+  CenshareCombinedModel,
+} from "../types/models/censhare.model.types";
 
 export class CenshareService extends FetchTool {
-  public parser: ParserTool;
-  private credentials: CredentialsService;
+  private model: CenshareCombinedModel;
 
   constructor() {
     super(process.env.CENSHARE_API_URL);
-    this.credentials = new CredentialsService();
-    this.parser = new ParserTool();
+    this.model = Censhare;
+  }
+
+  async create(user_id: string, data: CenshareData) {
+    const record = await this.getByUserId(user_id);
+
+    if (record) return;
+    const credentials = { user_id, ...data };
+    await this.model.create(credentials);
+  }
+
+  async getByUserId(user_id: string) {
+    const record = await this.model.findByUserId(user_id);
+    return record;
+  }
+
+  async update(user_id: string, data: UpdateCenshareData) {
+    const record = await this.model.update(user_id, data);
+    return record;
   }
 
   private async setAuthorization(user_id: string) {
     const { censhareUsername, censharePassword } =
-      await this.credentials.getByUserId(user_id);
+      await this.getByUserId(user_id);
     return {
       username: censhareUsername,
       password: censharePassword,
@@ -34,12 +56,13 @@ export class CenshareService extends FetchTool {
     return response;
   }
 
-  filterByDataTypes(dataTypes: string[], assets: Asset[]) {
+  filterByDataTypes(dataTypes: string[], assets: any[]) {
     return assets.filter((asset) => dataTypes.includes(asset.dateityp));
   }
 
   async downloadAsset(user_id: string, entity: string, assetId: number) {
     const route = this.formRoute(entity, assetId);
+    console.log("Route", route);
     const auth = await this.setAuthorization(user_id);
     const request = this.tool.get(route, { auth });
     const response = await this.handler(request);

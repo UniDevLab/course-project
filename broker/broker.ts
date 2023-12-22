@@ -1,8 +1,9 @@
 import { Helpers } from "./tools/helpers";
+import { Options } from "../types/external/broker/broker.types";
 import { QueueTool } from "./tools/queue.tool";
 import { CustomError } from "../constructors/error.constructor";
 import { ProducerTool } from "./tools/producer.tool";
-import { Options, QueueCallback } from "../types/broker.types";
+import { QueueCallback } from "../types/external/broker/queue.broker.types";
 
 export class Broker {
   helpers: Helpers;

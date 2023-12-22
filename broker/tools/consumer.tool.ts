@@ -1,93 +1,63 @@
+import { Asset } from "../../types/external/assets/assets.types";
 import { Broker } from "../broker";
-import { TokenTool } from "../../tools/token.tool";
-import { MessageTool } from "./message.tool";
+import { Options } from "../../types/external/broker/broker.types";
+import { Failure } from "../../types/external/assets/collection.assets.types";
 import { CustomError } from "../../constructors/error.constructor";
-import { UserService } from "../../services/user.service";
+import { AssetService } from "../../assets/services/asset.service";
 import { ConsumeMessage } from "amqplib";
-import { EndpointsService } from "../../services/endpoints.service";
-import { CredentialsService } from "../../services/credentials.service";
-import { ConsumerUserData, Options } from "../../types/broker.types";
 
 export class ConsumerTool {
-  private tokenTool: TokenTool;
-  private messageTool: MessageTool;
-  private userService: UserService;
-  private endpointsService: EndpointsService;
-  private credentialsService: CredentialsService;
+  private assetService: AssetService;
 
   constructor() {
-    this.tokenTool = new TokenTool();
-    this.messageTool = new MessageTool();
-    this.userService = new UserService();
-    this.endpointsService = new EndpointsService();
-    this.credentialsService = new CredentialsService();
+    this.assetService = new AssetService();
   }
 
-  private async getUserData(
-    id: string,
-    method: string
-  ): Promise<ConsumerUserData> {
-    const { email } = await this.userService.getById(id);
-    const urls = await this.endpointsService.getByUserId(id);
-    const { secret } = await this.credentialsService.getByUserId(id);
-    const url = urls[method];
-    return { email, url, secret };
+  private delay(time: number) {
+    return new Promise((resolve) => setTimeout(resolve, time));
   }
 
-  private getAuthToken(_id: string, email: string, secret: string): string {
-    const encoded = { _id, email };
-    const token = this.tokenTool.getWixAuthToken(encoded, secret);
-    return token;
-  }
-
-  private validateConsumeMessage(message: ConsumeMessage): void {
-    if (!message) {
-      throw new CustomError("Consumer Error", "Empty message in consumer", 500);
-    }
-
-    return;
-  }
-
-  private sendError = async (
-    broker: Broker,
+  private async handleError(
     options: Options,
-    error: any
-  ): Promise<void> => {
-    const message = { error: error.message };
-    const errorOptions = { ...options, name: "error" };
-    await broker.producers.sendMessage(message, errorOptions);
-  };
-
-  private async handleCallbackError(
     broker: Broker,
-    options: Options,
-    msg: ConsumeMessage,
-    error: any
-  ): Promise<void> {
+    message: ConsumeMessage,
+    error: unknown
+  ) {
     const queue = await broker.queues.get(options);
-    await this.sendError(broker, options, error);
-    queue.channel.reject(msg, false);
+    const newMessage = [error];
+    const errorOptions = { ...options, name: "error" };
+    await broker.producers.sendMessage(newMessage, errorOptions);
+    queue.channel.reject(message, false);
   }
 
-  callback =
+  process =
     (options: Options, broker: Broker) =>
     async (msg: ConsumeMessage | null) => {
       try {
-        this.validateConsumeMessage(msg);
-        const { user_id, name } = options;
+        if (!msg) throw new CustomError("Consumer", "Empty message", 500);
+
         const queue = await broker.queues.get(options);
-        const content = broker.queues.parse(msg);
-        const { email, url, secret } = await this.getUserData(user_id, name);
-        const token = this.getAuthToken(user_id, email, secret);
-        const isResendable = await this.messageTool.send(url, content, token);
+        const data = broker.queues.parse<Asset[] & (Failure | Error)[]>(msg);
+        const method = options.name as keyof AssetService;
+        const failed = await this.assetService[method](options.user_id, data);
 
-        if (!isResendable) return queue.channel.ack(msg);
+        if (failed.length) await this.processFailures(options, broker, failed);
 
-        await this.messageTool.delay(180000);
-        queue.channel.nack(msg);
-      } catch (error: any) {
-        console.log("Consumer Error", error);
-        await this.handleCallbackError(broker, options, msg, error);
+        console.log("message");
+
+        await this.delay(10000);
+        queue.channel.ack(msg);
+      } catch (error) {
+        await this.handleError(options, broker, msg, error);
       }
     };
+
+  private async processFailures(
+    options: Options,
+    broker: Broker,
+    failures: Failure[]
+  ) {
+    const errorOptions = { ...options, name: "error" };
+    await broker.producers.sendMessage(failures, errorOptions);
+  }
 }

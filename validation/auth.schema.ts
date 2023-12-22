@@ -1,7 +1,7 @@
 import Joi from "joi";
 import { ValidationRegExps } from "../consts/validation.const";
-import { CreateCredentialsSchema } from "./credentials.schema";
-import { CreateEndpointsSchema } from "./endpoints.schema";
+import { CreateCenshareSchema } from "./censhare.schema";
+import { CreateWixSchema } from "./wix.schema";
 
 export const LoginAndInitialStepSchema = Joi.object({
   email: Joi.string().trim().regex(ValidationRegExps.email).required(),
@@ -9,8 +9,8 @@ export const LoginAndInitialStepSchema = Joi.object({
 });
 
 export const FinalStepSchema = Joi.object({
-  credentials: CreateCredentialsSchema,
-  endpoints: CreateEndpointsSchema,
+  wix: CreateWixSchema,
+  censhare: CreateCenshareSchema,
 });
 
 export const RefreshTokensSchema = Joi.object({

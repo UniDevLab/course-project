@@ -1,7 +1,8 @@
-import { Application } from "express";
+import { wixRouter } from "./wix.router";
 import { userRouter } from "./user.router";
+import { Application } from "express";
 import { queueRouter } from "./queue.router";
-import { endpointsRouter } from "./endpoints.router";
+import { censhareRouter } from "./censhare.router";
 
 export class AppRouters {
   private app: Application;
@@ -11,8 +12,9 @@ export class AppRouters {
   }
 
   init() {
+    this.app.use("/wix", wixRouter);
     this.app.use("/user", userRouter);
     this.app.use("/queue", queueRouter);
-    this.app.use("/endpoints", endpointsRouter);
+    this.app.use("/censhare", censhareRouter);
   }
 }

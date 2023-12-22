@@ -1,6 +1,9 @@
 import jwt from "jsonwebtoken";
-import { TokenOptions } from "../types/token.types";
-import { AuthTokens, Identification } from "../types/auth.types";
+import { TokenOptions } from "../types/services/token.service.types";
+import {
+  AuthTokens,
+  Identification,
+} from "../types/services/user.service.types";
 
 export class TokenTool {
   private tool = jwt;

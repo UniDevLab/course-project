@@ -1,7 +1,7 @@
 import { Token } from "../models/token.model";
 import { TokenTool } from "../tools/token.tool";
-import { Identification } from "../types/auth.types";
-import { TokenCombinedModel } from "../types/token.types";
+import { Identification } from "../types/services/user.service.types";
+import { TokenCombinedModel } from "../types/models/token.model.types";
 
 export class TokenService {
   private tool: TokenTool;

@@ -14,13 +14,13 @@ queueRouter.post(
   "/notify",
   validate(NotificationSchema),
   authenticate(true),
-  responseMiddleware(сontroller.notify.bind(сontroller)),
+  responseMiddleware(сontroller.notify),
   errorMiddleware
 );
 
 queueRouter.post(
   "/initialize",
   authenticate(true),
-  responseMiddleware(сontroller.initialize.bind(сontroller)),
+  responseMiddleware(сontroller.initialize),
   errorMiddleware
 );

@@ -1,6 +1,6 @@
 import { FetchTool } from "../../tools/fetch.tool";
 import { CustomError } from "../../constructors/error.constructor";
-import { ListOfEntities } from "../../types/censhare.types";
+import { ListOfEntities } from "../../types/services/censhare.service.types";
 
 export class CenshareValidator extends FetchTool {
   constructor() {

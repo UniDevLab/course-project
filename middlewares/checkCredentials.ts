@@ -10,7 +10,7 @@ export const checkCredentials = async (
 ): Promise<void> => {
   try {
     const { body } = req;
-    const { censhareUsername, censharePassword } = body.credentials;
+    const { censhareUsername, censharePassword } = body.censhare;
     await validator.checkCredentials(censhareUsername, censharePassword);
     next();
   } catch (error) {

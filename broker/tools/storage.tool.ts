@@ -1,5 +1,8 @@
 import { Helpers } from "./helpers";
-import { Storage, User } from "../../types/broker.types";
+import {
+  User,
+  Storage,
+} from "../../types/external/broker/storage.broker.types";
 
 export class StorageTool<T> extends Helpers {
   public storage: Storage<T>;

@@ -1,5 +1,6 @@
+import { Options } from "../../types/external/broker/broker.types";
+import { Producer } from "../../types/external/broker/producer.broker.types";
 import { StorageTool } from "./storage.tool";
-import { Options, Producer } from "../../types/broker.types";
 
 export class ProducerTool extends StorageTool<Producer> {
   constructor() {

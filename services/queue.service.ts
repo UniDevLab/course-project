@@ -1,20 +1,20 @@
 import { Broker } from "../broker/broker";
-import { EndpointsService } from "./endpoints.service";
-import { Notification } from "../types/censhare.types";
+import { WixService } from "./wix.service";
+import { Notification } from "../types/external/messages/messages.types";
 import { ConsumerTool } from "../broker/tools/consumer.tool";
-import { InitializeService } from "./initialize.service";
-import { NotificationService } from "./notification.service";
+import { InitializeService } from "../messages/initialize.messages";
+import { NotificationService } from "../messages/notification.messages";
 
 export class QueueService {
   private broker: Broker;
-  private endpoints: EndpointsService;
+  private wixService: WixService;
   private consumerTool: ConsumerTool;
   private initializeService: InitializeService;
   private notificationService: NotificationService;
 
   constructor() {
     this.broker = new Broker();
-    this.endpoints = new EndpointsService();
+    this.wixService = new WixService();
     this.consumerTool = new ConsumerTool();
     this.initializeService = new InitializeService();
     this.notificationService = new NotificationService();
@@ -25,7 +25,7 @@ export class QueueService {
 
     const mainQueueOptions = { user_id, name };
     const errorQueueOptions = { user_id, name: "error" };
-    const handler = this.consumerTool.callback.bind(this.consumerTool);
+    const handler = this.consumerTool.process;
     await this.broker.setUserQueue(errorQueueOptions, handler);
     await this.broker.process(mainQueueOptions, messages, handler);
   }
@@ -43,7 +43,7 @@ export class QueueService {
   }
 
   async notify(user_id: string, notification: Notification) {
-    const { dataTypes } = await this.endpoints.getByUserId(user_id);
+    const { dataTypes } = await this.wixService.getByUserId(user_id);
     const assets = await this.notificationService.process(
       user_id,
       dataTypes,
@@ -55,7 +55,7 @@ export class QueueService {
   }
 
   async initialize(user_id: string) {
-    const { dataTypes } = await this.endpoints.getByUserId(user_id);
+    const { dataTypes } = await this.wixService.getByUserId(user_id);
     const assets = await this.initializeService.getAllAssets(
       user_id,
       dataTypes

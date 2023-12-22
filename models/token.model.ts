@@ -1,10 +1,9 @@
 // @ts-nocheck
-
 import mongoose, { Schema, SchemaTypes } from "mongoose";
 import {
   TokenCombinedDocument,
   TokenCombinedModel,
-} from "../types/token.types";
+} from "../types/models/token.model.types";
 
 export class TokenLoadingMethods {
   static update(user_id: string, refreshToken: string) {

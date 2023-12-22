@@ -1,15 +1,18 @@
-import { Asset } from "../types/censhare.types";
+import { Asset } from "../types/external/assets/assets.types";
 import { defaultSchema, translationMap } from "../consts/parser.consts";
-import { ProcessedFields, Schema, TranslationMap } from "../types/parser.types";
+import {
+  Schema,
+  ProcessedFields,
+} from "../types/external/messages/parser.message.types";
 
 export class ParserTool {
   private schema: Schema = defaultSchema;
-  private translation: TranslationMap = translationMap;
+  private translation: Asset = translationMap;
   private processedFields: ProcessedFields = {};
 
   constructor() {}
 
-  parse(asset: Asset): Schema {
+  parse(asset: any): Schema {
     const result: any = {};
     this.search(asset, result);
     const parsed: Schema = { ...this.schema, ...result };
@@ -17,7 +20,7 @@ export class ParserTool {
     return translated;
   }
 
-  private search(asset: Asset, result: any = {}, parentKey: any = null) {
+  private search(asset: any, result: any = {}, parentKey: any = null) {
     const fieldsToFind = Object.keys(this.schema);
 
     for (const [key, value] of Object.entries(asset)) {

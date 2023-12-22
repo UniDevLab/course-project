@@ -7,7 +7,7 @@ export const responseMiddleware =
       try {
         const data = await cb(req);
         const responseBody = data ?? null;
-        const result = ResponseConstructor.success<any>(responseBody);
+        const result = ResponseConstructor.success(responseBody);
         res.status(200).json(result);
       } catch (error) {
         next(error);

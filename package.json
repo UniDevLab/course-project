@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/AidXylelele/canshare-transfer-service#readme",
   "dependencies": {
+    "@wix/data": "^1.0.60",
+    "@wix/sdk": "^1.5.9",
     "amqplib": "^0.10.3",
     "axios": "^1.6.2",
     "body-parser": "^1.20.2",

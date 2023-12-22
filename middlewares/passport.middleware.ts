@@ -5,8 +5,8 @@ import {
   VerifiedCallback,
 } from "passport-jwt";
 import { CustomError } from "../constructors/error.constructor";
-import { Identification } from "../types/auth.types";
 import { PassportStatic } from "passport";
+import { Identification } from "../types/services/user.service.types";
 
 const options: StrategyOptions = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),

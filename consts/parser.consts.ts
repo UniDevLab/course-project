@@ -1,4 +1,7 @@
-import { Schema, TranslationMap } from "../types/parser.types";
+import {
+  Schema,
+  TranslationMap,
+} from "../types/external/messages/parser.message.types";
 
 export const defaultSchema: Schema = {
   titleIPTC: "",

@@ -36,7 +36,7 @@ export class Helpers {
 
   splitMessages<T>(messages: T[]): T[][] {
     const result: T[][] = [];
-    const CHUNK_SIZE = 100;
+    const CHUNK_SIZE = 450;
 
     for (let i = 0; i < messages.length; i += CHUNK_SIZE) {
       const chunk = messages.slice(i, i + CHUNK_SIZE);

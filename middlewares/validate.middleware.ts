@@ -7,9 +7,9 @@ export const validate =
     async (req: Request, _res: Response, next: NextFunction) => {
       try {
         const { error } = schema.validate(req.body);
-        if (error) {
-          throw new CustomError("Validation", "Invalid input", 400);
-        }
+
+        if (error) throw new CustomError("Validation", "Invalid input", 400);
+
         return next();
       } catch (error) {
         next(error);

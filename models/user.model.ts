@@ -1,10 +1,13 @@
 // @ts-nocheck
-
-import mongoose, { Schema, SchemaTypes } from "mongoose";
-import { UserCombinedDocument, UserCombinedModel } from "../types/user.types";
+import { Wix } from "./wix.model";
 import { Token } from "./token.model";
+import { Censhare } from "./censhare.model";
 import { Checkpoint } from "./checkpoint.model";
-import { Uri } from "./endpoints.model";
+import mongoose, { Schema, SchemaTypes } from "mongoose";
+import {
+  UserCombinedDocument,
+  UserCombinedModel,
+} from "../types/models/user.model.types";
 
 export class UserLoadingMethods {
   static changePassword(_id: string, password: string) {
@@ -27,7 +30,7 @@ const schema = new Schema({
 schema.loadClass(UserLoadingMethods);
 
 schema.pre("remove", function (next) {
-  const models = [Token, Checkpoint, Uri];
+  const models = [Token, Checkpoint, Wix, Censhare];
   models.forEach((model) => model.remove({ user_id: this._id }).exec());
   next();
 });

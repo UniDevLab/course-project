@@ -4,7 +4,7 @@ import mongoose, { Schema, SchemaTypes } from "mongoose";
 import {
   CheckpointCombinedDocument,
   CheckpointCombinedModel,
-} from "../types/checkpoint.types";
+} from "../types/models/checkpoint.model.types";
 
 export class CheckpointLoadingMethods {
   static find(user_id: string) {

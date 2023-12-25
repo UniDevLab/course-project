@@ -1,0 +1,215 @@
+{
+    "assets": [
+        {
+            "titleIPTC": "Label FSC C016848 schwarz",
+            "kanalExport": false,
+            "farbraum": "cmyk",
+            "dateigroeße": 2191946,
+            "ALTtext": "Label FSC C016848 schwarz",
+            "masterdata": {
+                "variants": {
+                    "master": {
+                        "size": 2191946,
+                        "link": "http://lavech-prodszrh-oc01.censhare.com/hcms/v2.0/entity/logo/16143/media/MTYxNDMvMC9ENUYzNzYzQzA1RjUxMkJBN0M2OTZCQzQ5Q0FDOTE3NUIyMzY2QTUy/master",
+                        "type": "application/postscript"
+                    }
+                }
+            },
+            "gueltigkeit": {
+                "von": "2023-02-02T07:32:29Z",
+                "bis": "2099-12-31T22:59:00Z"
+            },
+            "kanal": "root.dam.public.",
+            "dateityp": "application/postscript",
+            "assetId": 16143,
+            "veroeffentlichung": {
+                "von": "2023-02-02T07:32:29Z",
+                "bis": "2099-12-31T22:59:00Z"
+            },
+            "name": "LAVEBA-Label-FSC-C016848-schwarz-022023.eps",
+            "domaene": "root.laveba.dam.public.",
+            "ausgabekanal": "print",
+            "hauptmarke": {
+                "name": "LAVEBA"
+            }
+        },
+        {
+            "titleIPTC": "LAVEBA Label OAK Nr. 11924-02666",
+            "kanalExport": false,
+            "farbraum": "rgb",
+            "dateigroeße": 2102998,
+            "ALTtext": "LAVEBA Label OAK Nr. 11924-02666",
+            "masterdata": {
+                "variants": {
+                    "master": {
+                        "size": 2102998,
+                        "link": "http://lavech-prodszrh-oc01.censhare.com/hcms/v2.0/entity/logo/16144/media/MTYxNDQvMC8wMENFRTQ4MTYyQTFGOUM0NzQzMDFBNzE4NkFFQzg2RjFBMjlGQzJE/master",
+                        "type": "application/vnd.adobe.illustrator"
+                    }
+                }
+            },
+            "gueltigkeit": {
+                "von": "2023-02-02T07:32:29Z",
+                "bis": "2099-12-31T22:59:00Z"
+            },
+            "kanal": "root.dam.public.",
+            "schlagwoerterIPTC": "schweiz, schweiz fahne, swiss, fahne, fahnen, flagge, nation, wehend, rot, weiﬂ, weiss, schweiz, schweiz fahne, swiss, fahne, fahnen, flagge, nation, wehend, rot, weiﬂ, weiss",
+            "dateityp": "application/vnd.adobe.illustrator",
+            "assetId": 16144,
+            "veroeffentlichung": {
+                "von": "2023-02-02T07:32:29Z",
+                "bis": "2099-12-31T22:59:00Z"
+            },
+            "name": "LAVEBA-Label-OAK-Nr.-11924-02666-022023.ai",
+            "domaene": "root.laveba.dam.public.",
+            "ausgabekanal": "print",
+            "hauptmarke": {
+                "name": "LAVEBA"
+            }
+        },
+        {
+            "titleIPTC": "LAVEBA Logo CMYK positiv",
+            "kanalExport": false,
+            "farbraum": "cmyk",
+            "dateigroeße": 1110446,
+            "ALTtext": "LAVEBA Logo CMYK positiv",
+            "masterdata": {
+                "variants": {
+                    "master": {
+                        "size": 1110446,
+                        "link": "http://lavech-prodszrh-oc01.censhare.com/hcms/v2.0/entity/logo/16189/media/MTYxODkvMC85RjA3NEU5Nzc1MTAzNzNCMzFBQ0UzQzIxQUI3MEUyRDJERjFEN0M5/master",
+                        "type": "application/postscript"
+                    }
+                }
+            },
+            "gueltigkeit": {
+                "von": "2023-02-02T13:19:54Z",
+                "bis": "2099-12-31T22:59:00Z"
+            },
+            "kanal": "root.dam.public.",
+            "dateityp": "application/postscript",
+            "assetId": 16189,
+            "veroeffentlichung": {
+                "von": "2023-02-02T13:19:54Z",
+                "bis": "2099-12-31T22:59:00Z"
+            },
+            "name": "LAVEBA-Logo-CMYK-positiv-022023.eps",
+            "domaene": "root.laveba.dam.public.",
+            "ausgabekanal": "newsletter",
+            "hauptmarke": {
+                "name": "LAVEBA"
+            }
+        },
+        {
+            "titleIPTC": "AGROLA horizontal CMYK positiv",
+            "kanalExport": false,
+            "farbraum": "cmyk",
+            "dateigroeße": 559266,
+            "ALTtext": "AGROLA horizontal CMYK positiv",
+            "masterdata": {
+                "variants": {
+                    "master": {
+                        "size": 559266,
+                        "link": "http://lavech-prodszrh-oc01.censhare.com/hcms/v2.0/entity/logo/16191/media/MTYxOTEvMC9GMjVDQjhDRDE5Rjc4MTBFMEY3ODRENkI1MjAyRERFRjhBOEQyRTBF/master",
+                        "type": "application/postscript"
+                    }
+                }
+            },
+            "gueltigkeit": {
+                "von": "2023-02-02T13:21:25Z",
+                "bis": "2099-12-31T22:59:00Z"
+            },
+            "kanal": "root.dam.public.",
+            "dateityp": "application/postscript",
+            "assetId": 16191,
+            "veroeffentlichung": {
+                "von": "2023-02-02T13:21:25Z",
+                "bis": "2099-12-31T22:59:00Z"
+            },
+            "name": "AGROLA-horizontal-CMYK-positiv-022023.eps",
+            "domaene": "root.laveba.dam.public.",
+            "ausgabekanal": "newsletter",
+            "hauptmarke": {
+                "name": "AGROLA"
+            }
+        }
+    ],
+    "results": [
+        {
+            "titleIptc": "Label FSC C016848 schwarz",
+            "channelExport": false,
+            "size": 2191946,
+            "keywords": "",
+            "alt": "Label FSC C016848 schwarz",
+            "language": "",
+            "link": "http://lavech-prodszrh-oc01.censhare.com/hcms/v2.0/entity/logo/16143/media/MTYxNDMvMC9ENUYzNzYzQzA1RjUxMkJBN0M2OTZCQzQ5Q0FDOTE3NUIyMzY2QTUy/master",
+            "validFrom": "2023-02-02T07:32:29Z",
+            "validTo": "2099-12-31T22:59:00Z",
+            "keywordsIptc": "",
+            "dataType": "application/postscript",
+            "assetId": 16143,
+            "publishFrom": "2023-02-02T07:32:29Z",
+            "publishTo": "2099-12-31T22:59:00Z",
+            "filename": "LAVEBA-Label-FSC-C016848-schwarz-022023.eps",
+            "outputChannel": "print",
+            "mainBrand": "LAVEBA"
+        },
+        {
+            "titleIptc": "LAVEBA Label OAK Nr. 11924-02666",
+            "channelExport": false,
+            "size": 2102998,
+            "keywords": "",
+            "alt": "LAVEBA Label OAK Nr. 11924-02666",
+            "language": "",
+            "link": "http://lavech-prodszrh-oc01.censhare.com/hcms/v2.0/entity/logo/16144/media/MTYxNDQvMC8wMENFRTQ4MTYyQTFGOUM0NzQzMDFBNzE4NkFFQzg2RjFBMjlGQzJE/master",
+            "validFrom": "2023-02-02T07:32:29Z",
+            "validTo": "2099-12-31T22:59:00Z",
+            "keywordsIptc": "schweiz, schweiz fahne, swiss, fahne, fahnen, flagge, nation, wehend, rot, weiﬂ, weiss, schweiz, schweiz fahne, swiss, fahne, fahnen, flagge, nation, wehend, rot, weiﬂ, weiss",
+            "dataType": "application/vnd.adobe.illustrator",
+            "assetId": 16144,
+            "publishFrom": "2023-02-02T07:32:29Z",
+            "publishTo": "2099-12-31T22:59:00Z",
+            "filename": "LAVEBA-Label-OAK-Nr.-11924-02666-022023.ai",
+            "outputChannel": "print",
+            "mainBrand": "LAVEBA"
+        },
+        {
+            "titleIptc": "LAVEBA Logo CMYK positiv",
+            "channelExport": false,
+            "size": 1110446,
+            "keywords": "",
+            "alt": "LAVEBA Logo CMYK positiv",
+            "language": "",
+            "link": "http://lavech-prodszrh-oc01.censhare.com/hcms/v2.0/entity/logo/16189/media/MTYxODkvMC85RjA3NEU5Nzc1MTAzNzNCMzFBQ0UzQzIxQUI3MEUyRDJERjFEN0M5/master",
+            "validFrom": "2023-02-02T13:19:54Z",
+            "validTo": "2099-12-31T22:59:00Z",
+            "keywordsIptc": "",
+            "dataType": "application/postscript",
+            "assetId": 16189,
+            "publishFrom": "2023-02-02T13:19:54Z",
+            "publishTo": "2099-12-31T22:59:00Z",
+            "filename": "LAVEBA-Logo-CMYK-positiv-022023.eps",
+            "outputChannel": "newsletter",
+            "mainBrand": "LAVEBA"
+        },
+        {
+            "titleIptc": "AGROLA horizontal CMYK positiv",
+            "channelExport": false,
+            "size": 559266,
+            "keywords": "",
+            "alt": "AGROLA horizontal CMYK positiv",
+            "language": "",
+            "link": "http://lavech-prodszrh-oc01.censhare.com/hcms/v2.0/entity/logo/16191/media/MTYxOTEvMC9GMjVDQjhDRDE5Rjc4MTBFMEY3ODRENkI1MjAyRERFRjhBOEQyRTBF/master",
+            "validFrom": "2023-02-02T13:21:25Z",
+            "validTo": "2099-12-31T22:59:00Z",
+            "keywordsIptc": "",
+            "dataType": "application/postscript",
+            "assetId": 16191,
+            "publishFrom": "2023-02-02T13:21:25Z",
+            "publishTo": "2099-12-31T22:59:00Z",
+            "filename": "AGROLA-horizontal-CMYK-positiv-022023.eps",
+            "outputChannel": "newsletter",
+            "mainBrand": "AGROLA"
+        }
+    ]
+}

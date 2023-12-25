@@ -32,25 +32,25 @@ export class ConsumerTool {
 
   process =
     (options: Options, broker: Broker) =>
-    async (msg: ConsumeMessage | null) => {
-      try {
-        if (!msg) throw new CustomError("Consumer", "Empty message", 500);
+      async (msg: ConsumeMessage | null) => {
+        try {
+          if (!msg) throw new CustomError("Consumer", "Empty message", 500);
 
-        const queue = await broker.queues.get(options);
-        const data = broker.queues.parse<Asset[] & (Failure | Error)[]>(msg);
-        const method = options.name as keyof AssetService;
-        const failed = await this.assetService[method](options.user_id, data);
+          const queue = await broker.queues.get(options);
+          const data = broker.queues.parse<Asset[] & (Failure | Error)[]>(msg);
+          const method = options.name as keyof AssetService;
+          const failed = await this.assetService[method](options.user_id, data);
 
-        if (failed.length) await this.processFailures(options, broker, failed);
+          if (failed.length) await this.processFailures(options, broker, failed);
 
-        console.log("message");
+          console.log("message");
 
-        await this.delay(10000);
-        queue.channel.ack(msg);
-      } catch (error) {
-        await this.handleError(options, broker, msg, error);
-      }
-    };
+          await this.delay(10000);
+          queue.channel.ack(msg);
+        } catch (error) {
+          await this.handleError(options, broker, msg, error);
+        }
+      };
 
   private async processFailures(
     options: Options,

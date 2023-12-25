@@ -1,25 +1,28 @@
 {
   "compilerOptions": {
+    "baseUrl": ".src/",
     "declaration": true,
+    "rootDir": "src",
     "outDir": "./dist",
     "target": "esnext",
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
-    "alwaysStrict": true, 
+    "alwaysStrict": true,
     "allowUnreachableCode": false,
-    "noImplicitAny": true, 
-    "strictNullChecks": false, 
+    "noImplicitAny": true,
+    "strictNullChecks": false,
     "noImplicitReturns": true,
-    "noUncheckedIndexedAccess": true, 
-    "noUnusedLocals": true, 
-    "noUnusedParameters": true  
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "include": [
-    "./**/*"
-, "models/wix.model.ts"  ],
+    "./",
+  ],
   "exclude": [
+    "dist/",
+    "tests/**/*",
     "node_modules",
-    "tests/**/*"
   ]
 }

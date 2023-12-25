@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": ".src/",
     "declaration": true,
-    "rootDir": "src",
+    "rootDir": "./src",
     "outDir": "./dist",
     "target": "esnext",
     "module": "commonjs",
@@ -18,11 +17,6 @@
     "noUnusedParameters": true
   },
   "include": [
-    "./",
+    "src/**/*",
   ],
-  "exclude": [
-    "dist/",
-    "tests/**/*",
-    "node_modules",
-  ]
 }

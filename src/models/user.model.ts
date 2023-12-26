@@ -20,6 +20,11 @@ export class UserLoadingMethods {
     const filter = { email };
     return this.findOne(filter);
   }
+
+  static delete(_id: string) {
+    const conditions = { _id };
+    return this.findOneAndDelete(conditions);
+  }
 }
 
 const schema = new Schema({
@@ -29,9 +34,9 @@ const schema = new Schema({
 
 schema.loadClass(UserLoadingMethods);
 
-schema.pre("remove", function (next) {
+schema.pre("findOneAndDelete", function (next) {
   const models = [Token, Checkpoint, Wix, Censhare];
-  models.forEach((model) => model.remove({ user_id: this._id }).exec());
+  models.forEach((model) => model.deleteOne({ user_id: this._id }).exec());
   next();
 });
 

@@ -109,6 +109,6 @@ export class UserService {
   }
 
   async delete(id: string) {
-    await this.model.findByIdAndRemove(id);
+    await this.model.delete(id);
   }
 }

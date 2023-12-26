@@ -32,7 +32,6 @@ export class FetchTool {
   }
 
   private errorCb = (error: AxiosError) => {
-    console.log(error);
     throw new CustomError("Fetch", "Failed to fetch!", error.status || 500);
   };
 

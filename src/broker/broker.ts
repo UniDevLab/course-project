@@ -27,12 +27,10 @@ export class Broker {
     try {
       await this.setUserQueue(options, fn);
       const partitions = this.helpers.splitMessages(messages);
-
       for (const partition of partitions) {
         await this.producers.sendMessage(partition, options);
       }
     } catch (error) {
-      console.log(error);
       throw new CustomError("Queue Error", "Unexpected error!", 500);
     }
   }

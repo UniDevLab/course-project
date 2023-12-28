@@ -109,6 +109,10 @@ export class UserService {
   }
 
   async delete(id: string) {
-    await this.model.delete(id);
+    await this.model.findByIdAndDelete(id);
+    await this.token.delete(id);
+    await this.censhare.delete(id);
+    await this.wix.delete(id);
+    await this.checkpoint.delete(id);
   }
 }

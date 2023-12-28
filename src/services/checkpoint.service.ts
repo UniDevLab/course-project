@@ -23,6 +23,10 @@ export class CheckpointService {
 
   async getState(user_id: string) {
     const record = await this.model.find(user_id);
-    return record.isFinished;
+    return record?.isFinished;
+  }
+
+  async delete(user_id: string) {
+    await this.model.delete(user_id);
   }
 }

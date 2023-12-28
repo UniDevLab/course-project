@@ -35,6 +35,10 @@ export class CenshareService extends FetchTool {
     return record;
   }
 
+  async delete(user_id: string) {
+    await this.model.delete(user_id)
+  }
+
   private async setAuthorization(user_id: string) {
     const { censhareUsername, censharePassword } =
       await this.getByUserId(user_id);

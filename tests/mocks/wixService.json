@@ -1,0 +1,14 @@
+{
+  "data": {
+    "apiKey": "TEST_API_KEY",
+    "siteId": "TEST_SITE_ID",
+    "dataTypes": ["test/test"]
+  },
+  "account": {
+    "email": "wixservicetest@gmail.com",
+    "password": "Qwerty123456"
+  },
+  "env": {
+    "MONOG_DB_URI": "mongodb://admin:Qwerty123456@161.35.226.25:27017/?authMechanism=DEFAULT&tls=false"
+  }
+}

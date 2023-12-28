@@ -1,0 +1,26 @@
+{
+  "env": {
+    "HASH_SALT": "test",
+    "REFRESH_EXPIRATION": "360000",
+    "REFRESH_SECRET": "test",
+    "ACCESS_EXPIRATION": "36000",
+    "ACCESS_SECRET": "test",
+    "CENSHARE_API_URL": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity",
+    "MONOG_DB_URI": "mongodb://admin:Qwerty123456@161.35.226.25:27017/?authMechanism=DEFAULT&tls=false"
+  },
+  "account": {
+    "email": "test@gmail.com",
+    "password": "Qwerty123456"
+  },
+  "details": {
+    "wix": {
+      "apiKey": "TEST_API_KEY",
+      "siteId": "TEST_SITE_ID",
+      "dataTypes": ["test/test"]
+    },
+    "censhare": {
+      "censhareUsername": "admin",
+      "censharePassword": "?cXFEG^cnrQ"
+    }
+  }
+}

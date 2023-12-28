@@ -1,0 +1,216 @@
+{
+  "data": {
+    "censhareUsername": "admin",
+    "censharePassword": "?cXFEG^cnrQs"
+  },
+  "account": {
+    "email": "censhareservicetest@gmail.com",
+    "password": "Qwerty123456"
+  },
+  "env": {
+    "CENSHARE_API_URL": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity",
+    "MONOG_DB_URI": "mongodb://admin:Qwerty123456@161.35.226.25:27017/?authMechanism=DEFAULT&tls=false"
+  },
+  "listOfEntities": {
+    "updateBarcode": {
+      "name": "updateBarcode",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateBarcode"
+    },
+    "updateProduktbild": {
+      "name": "updateProduktbild",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateProduktbild"
+    },
+    "updateMessestand": {
+      "name": "updateMessestand",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateMessestand"
+    },
+    "stockbild": {
+      "name": "stockbild",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/stockbild"
+    },
+    "updateInfografik": {
+      "name": "updateInfografik",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateInfografik"
+    },
+    "updateEventbild": {
+      "name": "updateEventbild",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateEventbild"
+    },
+    "logo": {
+      "name": "logo",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/logo"
+    },
+    "grafikelement": {
+      "name": "grafikelement",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/grafikelement"
+    },
+    "barcode": {
+      "name": "barcode",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/barcode"
+    },
+    "updateObjektbild": {
+      "name": "updateObjektbild",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateObjektbild"
+    },
+    "stimmungsbild": {
+      "name": "stimmungsbild",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/stimmungsbild"
+    },
+    "produktbild": {
+      "name": "produktbild",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/produktbild"
+    },
+    "updateMockup": {
+      "name": "updateMockup",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateMockup"
+    },
+    "updateOnlinepdf": {
+      "name": "updateOnlinepdf",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateOnlinepdf"
+    },
+    "updateAudio": {
+      "name": "updateAudio",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateAudio"
+    },
+    "updateKarte": {
+      "name": "updateKarte",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateKarte"
+    },
+    "updateGrafikelement": {
+      "name": "updateGrafikelement",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateGrafikelement"
+    },
+    "animation": {
+      "name": "animation",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/animation"
+    },
+    "panorama": {
+      "name": "panorama",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/panorama"
+    },
+    "textur": {
+      "name": "textur",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/textur"
+    },
+    "updateIcon": {
+      "name": "updateIcon",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateIcon"
+    },
+    "messestand": {
+      "name": "messestand",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/messestand"
+    },
+    "unterschrift": {
+      "name": "unterschrift",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/unterschrift"
+    },
+    "updateStockbild": {
+      "name": "updateStockbild",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateStockbild"
+    },
+    "updateUnterschrift": {
+      "name": "updateUnterschrift",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateUnterschrift"
+    },
+    "updateAnimation": {
+      "name": "updateAnimation",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateAnimation"
+    },
+    "qrcode": {
+      "name": "qrcode",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/qrcode"
+    },
+    "updateHintergrundbild": {
+      "name": "updateHintergrundbild",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateHintergrundbild"
+    },
+    "cad": {
+      "name": "cad",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/cad"
+    },
+    "onlinepdf": {
+      "name": "onlinepdf",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/onlinepdf"
+    },
+    "icon": {
+      "name": "icon",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/icon"
+    },
+    "updateStimmungsbild": {
+      "name": "updateStimmungsbild",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateStimmungsbild"
+    },
+    "video": {
+      "name": "video",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/video"
+    },
+    "updateLogo": {
+      "name": "updateLogo",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateLogo"
+    },
+    "updatePortrait": {
+      "name": "updatePortrait",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updatePortrait"
+    },
+    "audio": {
+      "name": "audio",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/audio"
+    },
+    "karte": {
+      "name": "karte",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/karte"
+    },
+    "updateQrcode": {
+      "name": "updateQrcode",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateQrcode"
+    },
+    "updateZeichnung": {
+      "name": "updateZeichnung",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateZeichnung"
+    },
+    "infografik": {
+      "name": "infografik",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/infografik"
+    },
+    "hintergrundbild": {
+      "name": "hintergrundbild",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/hintergrundbild"
+    },
+    "updateTextur": {
+      "name": "updateTextur",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateTextur"
+    },
+    "updateCad": {
+      "name": "updateCad",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateCad"
+    },
+    "portrait": {
+      "name": "portrait",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/portrait"
+    },
+    "mockup": {
+      "name": "mockup",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/mockup"
+    },
+    "objektbild": {
+      "name": "objektbild",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/objektbild"
+    },
+    "updatePanorama": {
+      "name": "updatePanorama",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updatePanorama"
+    },
+    "updateVideo": {
+      "name": "updateVideo",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/updateVideo"
+    },
+    "eventbild": {
+      "name": "eventbild",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/eventbild"
+    },
+    "zeichnung": {
+      "name": "zeichnung",
+      "link": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity/zeichnung"
+    }
+  }
+}

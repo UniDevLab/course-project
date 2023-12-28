@@ -23,6 +23,11 @@ export class CenshareLoadingMethods {
     const options = { new: true, projection };
     return this.findOneAndUpdate(filter, data, options);
   }
+  
+  static delete(user_id: string) {
+    const conditions = { user_id };
+    return this.findOneAndDelete(conditions);
+  }
 }
 
 const schema = new Schema({

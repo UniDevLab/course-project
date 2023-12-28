@@ -18,6 +18,11 @@ export class CheckpointLoadingMethods {
 
     return this.findOneAndUpdate(conditions, update);
   }
+  
+  static delete(user_id: string) {
+    const conditions = { user_id };
+    return this.findOneAndDelete(conditions);
+  }
 }
 
 const schema = new Schema({

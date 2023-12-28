@@ -1,0 +1,9 @@
+{
+  "env": {
+    "ACCESS_EXPIRATION": "3600",
+    "REFRESH_EXPIRATION": "36000",
+    "ACCESS_SECRET": "test",
+    "REFRESH_SECRET": "test"
+  },
+  "value": { "_id": "123124352361351341214124251", "email": "test@gmail.com" }
+}

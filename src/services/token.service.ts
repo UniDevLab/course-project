@@ -41,4 +41,8 @@ export class TokenService {
     await this.model.update(value._id, refreshToken);
     return { accessToken, refreshToken };
   }
+
+  async delete(user_id: string) {
+    await this.model.delete(user_id)
+  }
 }

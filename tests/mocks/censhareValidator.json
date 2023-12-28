@@ -1,0 +1,13 @@
+{
+  "env": {
+    "CENSHARE_API_URL": "http://lavech-devszrh-oc01.censhare.com:8080/hcms/v2.0/entity"
+  },
+  "auth": {
+    "username": "admin",
+    "password": "?cXFEG^cnrQs"
+  },
+  "wrongAuth": {
+    "username": "test",
+    "password": "wrongAuth"
+  }
+}

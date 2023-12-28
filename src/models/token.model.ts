@@ -11,9 +11,15 @@ export class TokenLoadingMethods {
     const update = { refreshToken };
     return this.findOneAndUpdate(conditions, update);
   }
+
   static getByUserId(user_id: string) {
     const filter = { user_id };
     return this.findOne(filter);
+  }
+  
+  static delete(user_id: string) {
+    const conditions = { user_id };
+    return this.findOneAndDelete(conditions);
   }
 }
 

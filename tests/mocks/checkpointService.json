@@ -1,0 +1,9 @@
+{
+  "account": {
+    "email": "checkpointservicetest@gmail.com",
+    "password": "Qwerty123456"
+  },
+  "env": {
+    "MONOG_DB_URI": "mongodb://admin:Qwerty123456@161.35.226.25:27017/?authMechanism=DEFAULT&tls=false"
+  }
+}

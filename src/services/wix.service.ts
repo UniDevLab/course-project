@@ -27,4 +27,8 @@ export class WixService {
     const updated = await this.model.update(user_id, data);
     return updated;
   }
+
+  async delete(user_id: string) {
+    await this.model.delete(user_id)
+  }
 }

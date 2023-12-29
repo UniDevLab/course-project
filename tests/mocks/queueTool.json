@@ -1,0 +1,8 @@
+{
+  "data": {
+    "options": { "user_id": "testUser", "name": "testQueue" }
+  },
+  "env": {
+    "RABBIT_MQ_URI": "amqp://guest:guest@test.iquantis.com:5672"
+  }
+}

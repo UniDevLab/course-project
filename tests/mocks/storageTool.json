@@ -1,0 +1,8 @@
+{
+  "data": {
+    "user_id": "test_user_id"
+  },
+  "env": {
+    "RABBIT_MQ_URI": "amqp://guest:guest@test.iquantis.com:5672"
+  }
+}
